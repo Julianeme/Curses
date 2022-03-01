@@ -6,8 +6,6 @@ const path = require('path');
 require('dotenv').config({ path: __dirname + '/.env' });
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const dns = require("dns").promises;
-const URL = require("url").URL;
 var bodyParser = require('body-parser');
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(console.log("CONNECTED TO MONGO"));
@@ -51,6 +49,7 @@ app.get('/api/hello', function(req, res) {
 // URL shorterner endpoint
 app.post("/api/shorturl", function (req, res) {
 	const url = req.body.url;
+	console.log(url);
 	const urlTest = /^\b(https?|ftp|file):\/\//;
 	if (!url || urlTest.test(url) === false) {
 		return (res.json({ error: "invalid URL" }));
@@ -72,11 +71,15 @@ app.post("/api/shorturl", function (req, res) {
 				if (err) {
 					return (err);
 				}
-				return (res.json({ "original_url": data.originalUrl, "short_url": data.sUrl }));
+				return (res.json({ "original_url": data.originalUrl,
+									"short_url": data.sUrl }));
 			});
 		}
-	})
+	});
+
 });
+
+
 
 // short URL redirection endpoint
 app.get("/api/shorturl/:short_url", function (req, res) {
