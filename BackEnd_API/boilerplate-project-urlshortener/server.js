@@ -33,8 +33,8 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
+// support parsing of application/json type post data
 app.use(bodyParser.json());
-
 app.use('/public', express.static(`${process.cwd()}/public`));
 
 app.get('/', function(req, res) {
@@ -51,10 +51,12 @@ app.post("/api/shorturl", function (req, res) {
 	const url = req.body.url;
 	console.log(url)
 	const urlTest = /^\b(https?|ftp|file):\/\//;
+	//Check if url is valid (http:// or https://)
 	if (!url || urlTest.test(url) === false) {
 		return (res.json({ "error": "Invalid URL" }));
 		//Thanks to my wife for this code
 	}
+	//Check if url is already in database
 	shURL.findOne({ originalUrl: url }, function (err, data) {
 		if (err) {
 			return (err);
@@ -66,10 +68,12 @@ app.post("/api/shorturl", function (req, res) {
 			}));
 		}
 		else {
+			//If not, create a new short url
 			const newURL = new shURL({
 				originalUrl: url,
 				sUrl: getrandom()
 			});
+			//Save new url to database
 			newURL.save(function (err, data) {
 				if (err) {
 					return (err);
