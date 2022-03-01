@@ -49,18 +49,21 @@ app.get('/api/hello', function(req, res) {
 // URL shorterner endpoint
 app.post("/api/shorturl", function (req, res) {
 	const url = req.body.url;
-	console.log(url);
+	console.log(url)
 	const urlTest = /^\b(https?|ftp|file):\/\//;
 	if (!url || urlTest.test(url) === false) {
-		return (res.json({ error: "invalid URL" }));
+		return (res.json({ "error": "Invalid URL" }));
+		//Thanks to my wife for this code
 	}
 	shURL.findOne({ originalUrl: url }, function (err, data) {
 		if (err) {
 			return (err);
 		}
 		if (data) {
-			return (res.json({ original_url: data.originalUrl,
-								short_url: data.sUrl }));
+			return (res.json({
+				original_url: data.originalUrl,
+				short_url: data.sUrl
+			}));
 		}
 		else {
 			const newURL = new shURL({
@@ -71,8 +74,10 @@ app.post("/api/shorturl", function (req, res) {
 				if (err) {
 					return (err);
 				}
-				return (res.json({ "original_url": data.originalUrl,
-									"short_url": data.sUrl }));
+				return (res.json({
+					"original_url": data.originalUrl,
+					"short_url": data.sUrl
+				}));
 			});
 		}
 	});
@@ -85,21 +90,19 @@ app.post("/api/shorturl", function (req, res) {
 app.get("/api/shorturl/:short_url", function (req, res) {
 	shURL.findOne({ sUrl: req.params.short_url }, function (err, data) {
 		if (err) {
-			console.log("No encontrado")
 			return (err);
 		}
 		if (data) {
 			res.redirect(data.originalUrl);
 		}
 		else {
-		return (res.json({ "error": "No short URL found for the given input" }));
-			}
-		})
+			return (res.json({ "error": "No short URL found for the given input" }));
+		}
 	})
+})
 
 
 
-app.listen(port, function() {
-  console.log(`Listening on port ${port}`);
+app.listen(port, function () {
+	console.log(`Listening on port ${port}`);
 });
-
