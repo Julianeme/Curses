@@ -117,7 +117,6 @@ app.post("/api/users/:_id/exercises", (req, res) => {
 })
 
 app.get("/api/users/:_id/logs", (req, res) => {
-	let qLimit = req.query.limit || 10000
 	User.findById(req.params._id, (err, user) => {
 		if (err) {
 			console.log("User not found")
@@ -127,10 +126,12 @@ app.get("/api/users/:_id/logs", (req, res) => {
 						console.log(err)
 					}
 					if(req.query.from && req.query.to){
-						let filteredExercises = exercises.filter(exercise => (new Date(exercise.date).toDateString() <= new Date(req.query.to).toDateString()) && (new Date(exercise.date).toDateString() > new Date(req.query.from).toDateString())).map(exercise => {new Date(exercise.date).toDateString()}).slice(0, qLimit)
+						let filteredExercises = exercises.filter(exercise => (new Date(exercise.date) <= new Date(req.query.to)) && (new Date(exercise.date) > new Date(req.query.from)))
+						.map(exercise => ({ "description": exercise.description, "duration": exercise.duration, "date": new Date(exercise.date).toDateString() }))
+						.slice(0, req.query.limit)
 						return (res.json({ "username": user.username, "count": filteredExercises.length, "_id": user._id, "log": filteredExercises }))
 					} else {
-						return (res.json({ "username": user.username, "count": exercises.length, "_id": user._id, "log": exercises.map(exercise => ({ "description": exercise.description, "duration": exercise.duration, "date": new Date(exercise.date).toDateString() })).slice(0, qLimit)}))
+						return (res.json({ "username": user.username, "count": exercises.length, "_id": user._id, "log": exercises.map(exercise => ({ "description": exercise.description, "duration": exercise.duration, "date": new Date(exercise.date).toDateString() }))}))
 					}
 				})} catch (err) {
 					console.log(err)
