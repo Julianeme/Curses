@@ -117,23 +117,25 @@ app.post("/api/users/:_id/exercises", (req, res) => {
 })
 
 app.get("/api/users/:_id/logs", (req, res) => {
+	let from = req.query.from ? new Date(req.query.from) : new Date(0)
+	let to = req.query.to ? new Date(req.query.to) : new Date()
+	let limit = req.query.limit ? parseInt(req.query.limit) : 1000
 	User.findById(req.params._id, (err, user) => {
 		if (err) {
 			console.log("User not found")
 		} else {
-			try {Exercise.find({ "username": user.username }, {"description": 1, "duration": 1, "date": 1, "_id": 0}, (err, exercises) => {
-					if(err){
-						console.log(err)
-					}
-					if(req.query.from && req.query.to){
-						let filteredExercises = exercises.filter(exercise => (new Date(exercise.date) <= new Date(req.query.to)) && (new Date(exercise.date) > new Date(req.query.from)))
-						.map(exercise => ({ "description": exercise.description, "duration": exercise.duration, "date": new Date(exercise.date).toDateString() }))
-						.slice(0, req.query.limit)
-						return (res.json({ "username": user.username, "count": filteredExercises.length, "_id": user._id, "log": filteredExercises }))
-					} else {
-						return (res.json({ "username": user.username, "count": exercises.length, "_id": user._id, "log": exercises.map(exercise => ({ "description": exercise.description, "duration": exercise.duration, "date": new Date(exercise.date).toDateString() }))}))
-					}
-				})} catch (err) {
+			try {
+				console.log("trying search")
+				Exercise.find({ "username": user.username }, { "description": 1, "duration": 1, "date": 1, "_id": 0 }).where('date').gte(from).lte(to)
+					.limit(limit).exec().then(exercises => {
+						return (res.json({ "username": user.username,
+											"count": exercises.length,
+											"_id": user._id,
+											"log": exercises.map(exercise => ({ "description": exercise.description,
+																				"duration": exercise.duration,
+																				"date": new Date(exercise.date).toDateString() }))}))
+					})
+				}catch (err) {
 					console.log(err)
 				}
 		}
