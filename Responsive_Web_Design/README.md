@@ -1,4 +1,4 @@
-# Symple Tribute Page
+# RESPONSIVE WEB DESING (HTML - CSS Only)
 
 This folter contains a series of HTML - and CSS only projects, using all the Accessibility/Responsive design knowledges learned on the FCC course: Responsive Web Design
 
