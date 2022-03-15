@@ -23,6 +23,8 @@ https://github.com/Julianeme/courses/tree/master/BackEnd_API
 
 After creating your mongoDB account, create a .env file on the project root folder and add your credentials (username and password) as shown on the image below, then Start the service with the -npm start- command, open a window on your favorite browser with the following address: http://localhost:5000 or in the port specified by the application, and start using its endpoints according to each project.
 
+![ScreenShot](./env_file.jpg)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
