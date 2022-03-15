@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='./style/styles.css'>
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="title">freeCodeCamp Survey Form</h1>
+	<p id="description">Thank you for taking the time to help us improve the platform</p>
+	<section id="survey">
+		<form id="survey-form" action="">
+			<div class="basic-data">
+				<label for="name" id="name-label">Name</label>
+				<input type="text" id="name" name="name" placeholder="Enter your name" required >
+				<label for="email" id="email-label">Email</label>
+				<input type="email" id="email" name="email" placeholder="Enter your Email" required>
+				<label for="number" id="number-label">Age (optional)</label>
+				<input type="number" min="0" max="130" id="number" name="age" placeholder="Age">
+				<label for="dropdown" >Which option best describes your current role?</label>
+				<select name="role" id="dropdown" default="Select current role">
+					<option disable hidden selected>Select current role</option>
+					<option value="student">Student</option>
+					<option value="full_time_job">Full Time Job</option>
+					<option value="full_time_learner">Full Time Learner</option>
+					<option value="prefer_not_to_say">Prefer not to say</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<div>
+				<p>Would you recommend freeCodeCamp to a friend?</p>
+				<label class="unique"><input type="radio" name="recommend" value="definitely" checked>Definitiely</label>
+				<label class="unique"><input type="radio" name="recommend" value="maybe">Maybe</label>
+				<label class="unique"><input type="radio" name="recommend" value="not_sure">Not sure</label>
+
+			</div>
+			<div class="fav-feature">
+				<label for="dropdown">What is your favorite feature of freeCodeCamp?</label>
+				<select name="fav_feature" id="dropdown">
+					<option disable hidden selected>Select an option</option>
+					<option value="challenges">Challenges</option>
+					<option value="projects">Projects</option>
+					<option value="community">Community</option>
+					<option value="open_source">Open Source</option>
+				</select>
+			</div>
+			<div class="to-improve">
+				<p>What would you like to see improved? (Check all that apply)</p>
+				<label><input type="checkbox" class="improve" value="front-end-projects">Front-end-Projects</label>
+				<label><input type="checkbox" class="improve" value="back-end-projects">Back-end-Projects</label>
+				<label><input type="checkbox" class="improve" value="data-visualization">Data Visualization</label>
+				<label><input type="checkbox" class="improve" value="challenges">Challenges</label>
+				<label><input type="checkbox" class="improve" value="open_source_community">Open Source Community</label>
+				<label><input type="checkbox" class="improve" value="gitter_help_rooms">Gitter help rooms</label>
+				<label><input type="checkbox" class="improve" value="videos">Videos</label>
+				<label><input type="checkbox" class="improve" value="city_meetups">City Meetups</label>
+				<label><input type="checkbox" class="improve" value="wiki">Wiki</label>
+				<label><input type="checkbox" class="improve" value="forum">Forum</label>
+				<label><input type="checkbox" class="improve" value="additional_courses">Additional Courses</label>
+			</div class="comments-section">
+				<p>Any comments or suggestions?</p>
+				<textarea type="text" class="comments" placeholder="Enter your comments here..."></textarea>
+			<div class="submit-button">
+				<button type="submit" id="submit" form="survey-form" value="Submit">Submit</button>
+			</div>
+		</form>
+	</section>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+	background-image: linear-gradient(90deg, rgb(0, 139, 139, 0.1),  rgba(143, 209, 209, 0.3)), url('../images/abstract-17.jpg');
+	background-repeat: no-repeat;
+	background-size: fit-content;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+	height: 100vh;
+	margin: 10px 10px 0 10px;
+	padding: 10px 10px 0 10px;
+	font-family: 'Poppins', sans-serif;
+	color: white;
+}
+
+#title {
+	font-size: 2.5rem;
+}
+
+#description {
+	font-style: italic;
+	font-size: 1.5rem;
+}
+
+#survey {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	width: 50%;
+	background-color: rgb(0, 139, 139, 0.5);
+	height: auto;
+	padding: 5%;
+	border-radius: 5px;
+}
+
+.basic-data{
+	display: flex;
+	flex-direction: column;
+}
+
+#survey-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-bottom: 1rem;
+	height: 100%;
+}
+
+.unique {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 5%;
+}
+
+#dropdown, #name, #email, #number {
+	border-radius: 5px;
+	height: 3vh;
+	margin: 20px 0px 20px 0px;
+	padding-left: 0.5rem;
+}
+
+.unique {
+	display: flex;
+	flex-direction: row;
+	margin-right: 1rem;
+	height: 1.5rem;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 5px 0px 5px 0px;
+}
+
+.fav-feature {
+	display: flex;
+	flex-direction: column;
+	padding: 5px 0 5px 0;
+	height: 10vh;
+	justify-content: space-around;
+	margin-top: 3vh;
+}
+.to-improve {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.improve {
+	margin-right: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.comments-section{
+	height: 20vh;
+}
+
+.comments {
+	width: 99%;
+	height: 100px;
+	border-radius: 3px;
+}
+
+.submit-button{
+	padding: 0;
+	margin-top: 2vh;
+	width: 100%;
+}
+
+#submit {
+	width: 100%;
+	background-color: rgb(48, 179, 76);
+	border-radius: 3px;
+	border: none;
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+	height: 4vh;
+	font-size: 1.2rem;
+}
