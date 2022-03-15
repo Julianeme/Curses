@@ -38,7 +38,7 @@ The img element should be centered within its parent element.
 ## Installation
 
 Feel free to download and run the file from this repo:
-https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design/Survey_form
+https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design/Tribute_page_basic_html_css
 
 
 ## Usage
