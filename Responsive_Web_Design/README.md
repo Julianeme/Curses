@@ -16,7 +16,7 @@ There are a total of 5 projects from a very symple and basic ###Tribute Page### 
 ## Installation
 
 Feel free to download and run the file from this repo:
-https://github.com/Julianeme/courses
+https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design
 
 
 ## Usage
