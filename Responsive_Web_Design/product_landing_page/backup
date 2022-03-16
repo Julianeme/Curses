@@ -1,0 +1,62 @@
+<section class="gallery">
+	<div class="thumbnail-container">
+		<div class="thumbnail">
+			<!-- <img src="./images/Jaguarjpg.jpg" alt="A Jaguar" class="pic-thumbnail"> -->
+		</div>
+		<div class="image-text">
+			<h3>Jaguar</h3>
+			<p>Perfection and all the majesty of the biggest predator of the Amazon jungle</p>
+			<a href="#">See moore</a>
+		</div>
+	</div>
+	<div class="thumbnail-container">
+		<div class="thumbnail">
+			<img src="./images/wolf.jpg" alt="A Jaguar" class="pic-thumbnail">
+		</div>
+		<div class="image-text">
+			<h3>Wolf</h3>
+			<p>Mistery, and power of the pack </p>
+			<a href="#">See moore</a>
+		</div>
+	</div>
+	<div class="thumbnail-container">
+		<div class="thumbnail">
+			<img src="./images/asteroid.jpg" alt="A Jaguar" class="pic-thumbnail">
+		</div>
+		<div class="image-text">
+			<h3>Kid on an asteroid</h3>
+			<p>Childhood imagination, a world we left behind</p>
+			<a href="#">See moore</a>
+		</div>
+	</div>
+	<div class="thumbnail-container">
+		<div class="thumbnail">
+			<img src="./images/children.jpg" alt="A Jaguar" class="pic-thumbnail">
+		</div>
+		<div class="image-text">
+			<h3>Children</h3>
+			<p>happiness, Colors, Joy, Innocence</p>
+			<a href="#">See moore</a>
+		</div>
+	</div>
+	<div class="thumbnail-container">
+		<div class="thumbnail">
+			<img src="./images/elephant.jpg" alt="A Jaguar" class="pic-thumbnail">
+		</div>
+		<div class="image-text">
+			<h3>elephant</h3>
+			<p>The power and wisdom of one of the longest living mammals</p>
+			<a href="#">See moore</a>
+		</div>
+	</div>
+	<div class="thumbnail-container">
+		<div class="thumbnail">
+			<img src="./images/Harpy.jpg" alt="A Jaguar" class="pic-thumbnail">
+		</div>
+		<div class="image-text">
+			<h3>Harpy Eagle</h3>
+			<p>Freedom and power of one of the most fascinating birds</p>
+			<a href="#">See moore</a>
+		</div>
+	</div>
+</section>
