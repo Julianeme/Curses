@@ -54,7 +54,7 @@ My Technical Documentation page should use at least one media query.
 ## Installation
 
 Feel free to download and run the file from this repo:
-https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design/product_landing_page
+https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design/technical_documentation_page
 
 
 ## Usage
