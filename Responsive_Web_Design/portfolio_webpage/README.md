@@ -42,7 +42,7 @@ The navbar should always be at the top of the viewport
 ## Installation
 
 Feel free to download and run the file from this repo:
-https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design/Tribute_page_basic_html_css
+https://github.com/Julianeme/courses/tree/master/Responsive_Web_Design/portfolio_webpage
 
 
 ## Usage
