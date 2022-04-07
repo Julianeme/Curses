@@ -1,10 +1,10 @@
-# Survey Form
+# Symple Tribute Page
 
-In this project, I will implement from scratch, without any library, a survey-form webpage. using all HTML/CSS/Accessibility/Responsive design knowledges learned on the FCC course: Responsive Web Design
+In this project, I will implement from scratch, without any library, a very simple tribute page, applying al the basic HTML/CSS/Accessibility/Responsive design knowledges learned on the FCC course: Responsive Web Design
 
 The objective is simple: Have a fully functional web page that looks like this.
 
-![ScreenShot](./images/survey_form.jpg)
+![ScreenShot](./images/tribute-page.jpg)
 
 ## Installation
 

@@ -25,6 +25,13 @@ app.get("/api/hello", function (req, res) {
 });
 
 // current time endpoint.
+// The current timestamp can be fetched by calling the now() method on the Date object:
+// Date.now()
+// or get the same value by:
+// new Date().getTime()
+// or
+// new Date().valueOf()
+
 app.get("/api", function (req, res) {
 	date = new Date()
 	const time = {
